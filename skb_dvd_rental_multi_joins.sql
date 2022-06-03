@@ -103,7 +103,8 @@ WHERE c.category_id IN (
 SELECT *
 FROM category
 WHERE category_id in(
-	SELECT category_id FROM film_category
+	SELECT category_id 
+	FROM film_category
 	GROUP BY category_id
 	HAVING count(*) > 60
 	ORDER BY count(*) DESC 
